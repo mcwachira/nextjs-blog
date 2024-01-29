@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */
+
 import {withContentlayer} from "next-contentlayer"
 
 const nextConfig = {
