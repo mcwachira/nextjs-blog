@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter , Manrope} from "next/font/google";
 import "./globals.css";
+import {cx} from "@/utils";
+import Header from "@/components/ui/Header/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] , display:"swap", variable:"--font-sm"});
+const manrope = Manrope({ subsets: ["latin"] , display:"swap", variable:"--font-sm"});
+//By providing a value of swap , we tell the browser to render the page right away with fallback fonts, and then redraw the page once the fonts have loaded.
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+          className={cx(inter.variable,manrope.variable,'font-mr bg-light ')}>
+      <Header/>
+      {children}</body>
     </html>
   );
 }
