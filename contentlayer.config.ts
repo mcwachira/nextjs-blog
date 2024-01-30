@@ -1,51 +1,45 @@
 import { makeSource, defineDocumentType } from '@contentlayer/source-files'
 
 
-const Blog = defineDocumentType(() => ({
+export const Blog = defineDocumentType(() => ({
     name:'Blog',
     filePathPattern:'**/**/*.mdx',
-    field:{
-        title:{
-            type:'string',
+    contentType: "mdx",
+    fields: {
+        title: {
+            type: "string",
+            required: true,
         },
-        publishedAt:{
-            type:'date',
-            required:true,
-
+        publishedAt: {
+            type: "date",
+            required: true,
         },
-        updatedAt:{
-            type:'date',
-            required:true,
-
+        updatedAt: {
+            type: "date",
+            required: true,
         },
-        description:{
-            type:'date',
-            required:true,
-
+        description: {
+            type: "string",
+            required: true,
         },
-        image:{
-            type:'string',
-            required:true
+        image: { type: "image" },
+        isPublished: {
+            type: "boolean",
+            default: true,
         },
-        isPublishedAt:{
-            type:'boolean',
-            required:true,
-
-        },
-       author:{
-            type:'string',
-            required:true,
-
+        author: {
+            type: "string",
+            required: true,
         },
         tags: {
-            type: 'list',
-            of: { type: 'string' },
+            type: "list",
+            of: { type: "string" },
         },
     },
     computedFields: {
         url_path: {
             type: 'string',
-            resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
+            resolve: (blog) => `/blogs/${blog._raw.flattenedPath}`,
         },
     },
 }))

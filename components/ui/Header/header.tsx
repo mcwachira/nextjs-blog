@@ -4,7 +4,7 @@ import { DribbbleIcon, GithubIcon, LinkedinIcon, MoonIcon, SunIcon, TwitterIcon 
 
 import Link from "next/link";
 
-function Header(props) {
+function Header() {
     return (
         <header className='w-full p-4 px-10 flex items-center justify-between'>
 
@@ -20,7 +20,7 @@ function Header(props) {
 
 
                 <button>
-                    <SunIcon/>
+                    <SunIcon className=''/>
 
                 </button>
             </nav>
