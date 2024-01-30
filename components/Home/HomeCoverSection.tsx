@@ -9,7 +9,7 @@ import {allBlogs, Blog} from "contentlayer/generated";
 const HomeCoverSection = ({blogs}:Blog[]) => {
 
     const sortedBlogs = sortBlogs(blogs);
-    const blog = sortedBlogs[5];
+    const blog = sortedBlogs[0];
     console.log(blog)
 
     return (

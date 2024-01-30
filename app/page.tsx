@@ -1,6 +1,8 @@
 import Image from "next/image";
 import {allBlogs, Blog} from "contentlayer/generated";
 import HomeCoverSection from "@/components/Home/HomeCoverSection";
+import FeaturedPosts from "@/components/Home/FeaturedPosts";
+import RecentPosts from "@/components/Home/RecentPosts";
 
 export default async function Home() {
 
@@ -9,6 +11,8 @@ export default async function Home() {
 
         <main className="flex flex-col items-center justify-center">
             <HomeCoverSection blogs={allBlogs} />
+            <FeaturedPosts blogs={allBlogs} />
+       
     </main>
   );
 }

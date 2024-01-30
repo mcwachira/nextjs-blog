@@ -14,9 +14,9 @@ function Header() {
                 className=" w-max py-3 px-8 border-solid border-dark border-2 rounded-full font-medium capitalize flex items-center fixed top-6 right-1/2 translate-x-1/2 bg-light/80 backdrop-blur-sm ">
                 <Link href='/' className="mr-2">Home</Link>
 
-                <Link href='/' className="mx-2">Home</Link>
+                <Link href='/' className="mx-2">About</Link>
 
-                <Link href='/' className="mr-2">Home</Link>
+                <Link href='/' className="mr-2">Blog</Link>
 
 
                 <button>
