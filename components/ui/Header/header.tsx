@@ -16,7 +16,7 @@ function Header() {
 
                 <Link href='/about' className="mx-2">About</Link>
 
-                <Link href='/contact' className="mr-2">Contact</Link>
+                <Link href='/contact' className="mx-2">Contact</Link>
 
 
                 <button>
