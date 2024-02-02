@@ -10,6 +10,26 @@ import BlogLayoutThree from "@/components/Blog/BlogLayoutThree";
 
 const slugger = new GithubSlugger();
 
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+
+    const categories: string[] = [];
+    const paths = [{slug: "all"}];
+    allBlogs.map((blog) => {
+        if (blog.isPublished) {
+            blog.tags?.map((tag) => {
+                let slugified = slugger.slug(tag)
+                if (!categories.includes(slugified)) {
+                    categories.push(slugified)
+                    paths.push({slug: slugified})
+                }
+            })
+        }
+    })
+    return paths
+}
+
+
 const CategoryPage = ({params}:CategoryPageProps) => {
 
     const allCategories = ["all"];

@@ -10,6 +10,13 @@ import { slug } from "github-slugger";
 interface BlogPageProps{
     params:string
 }
+
+export async function generateStaticParams() {
+    return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
+}
+
+
+
 function BlogPage({params}:BlogPageProps) {
 const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug)
 
