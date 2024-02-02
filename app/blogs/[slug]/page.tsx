@@ -54,7 +54,7 @@ const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug)
 
             </div>
 
-            <BlogDetails blog={blog} slug={slug}/>
+            <BlogDetails blog={blog} slug={params.slug}/>
 
             <div className="grid grid-cols-12 gap-16 mt-8 px-10">
                 <div className="col-span-12  lg:col-span-4">
