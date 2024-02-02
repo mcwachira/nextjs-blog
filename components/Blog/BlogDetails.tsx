@@ -1,6 +1,7 @@
 import {format, parseISO} from "date-fns";
 import {Blog} from "contentlayer/generated";
 import Link from "next/link";
+import { slug } from "github-slugger";
 
 
 interface BlogDetailsProps {
@@ -22,7 +23,7 @@ const BlogDetails = ({blog, slug}:BlogDetailsProps) => {
                 {blog.readingTime.text}
             </div>
 
-            <Link href={`/categories/${blog.tags[0]}`} className='m-3'>
+            <Link href={`/categories/${slug(blog.tags[0])}`} className='m-3'>
                 #{blog.tags[0]}
             </Link>
         </div>
