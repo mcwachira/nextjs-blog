@@ -42,7 +42,8 @@ const ViewCounter = ({ slug, noCount = false, showCount = true }:ViewCounterProp
     useEffect(() => {
         const getViews = async () => {
             try {
-                let { data, error } = await supabase.from('views')
+                let { data, error } = await supabase
+                    .from('views')
                     .select('count')
                     .match({slug: slug})
                     .single()
@@ -51,7 +52,6 @@ const ViewCounter = ({ slug, noCount = false, showCount = true }:ViewCounterProp
                     console.error("Error incrementing view count inside try block:", error)
                 };
 
-                console.log(data)
 
                 setViews(data ? data.count : 0)
 
