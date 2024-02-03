@@ -1,6 +1,13 @@
 import LottieAnimation from "@/components/Contact/LottieAnimation";
 import ContactForm from "@/components/Contact/ContactForm";
+import type {Metadata} from "next";
+import siteMetadata from "@/utils/siteMetaData";
+export const metadata: Metadata = {
 
+    title: "Contact Me",
+    description:`Contact ve via my email at ${siteMetadata.email}`,
+
+}
 
 const Contact = () => {
 

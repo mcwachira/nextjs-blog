@@ -1,4 +1,5 @@
 import {allBlogs} from "contentlayer/generated";
+import siteMetadata from '@/utils/siteMetaData'
 
 
 interface CategoryPageProps{
@@ -29,6 +30,13 @@ export async function generateStaticParams() {
     return paths
 }
 
+
+export async function generateMetadata({ params }:CategoryPageProps) {
+    return {
+        title: `${params.slug.replaceAll("-"," ")} Blogs`,
+        description: `Learn more about ${params.slug === "all" ? "web development" : params.slug} through our collection of expert blogs and tutorials`,
+    };
+}
 
 const CategoryPage = ({params}:CategoryPageProps) => {
 
